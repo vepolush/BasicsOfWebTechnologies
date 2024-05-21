@@ -13,11 +13,21 @@
             <button id="add-button">Додати</button>
             <ul id="item-list">
                 <li>
-                    <p class="item-name completed">Помідори</p>
+                    <span class="item-name completed">Помідори</span>
                     <div class="quantity-control">
-                        <p class="quantity">2</p>
+                        <span class="quantity">2</span>
                     </div>
                     <button class="status-button completed">Не куплено</button>
+                </li>
+                <li>
+                    <span class="item-name uncompleted">Печиво</span>
+                    <div class="quantity-control">
+                        <button class="decrease">-</button>
+                        <span class="quantity">2</span>
+                        <button class="increase">+</button>
+                    </div>
+                    <button class="status-button uncompleted">Куплено</button>
+                    <button class="remove-button">x</button>
                 </li>
             </ul>
         </div>
