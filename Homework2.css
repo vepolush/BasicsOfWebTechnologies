@@ -4,3 +4,8 @@ body {
     justify-content: center;
     padding: 20px;
 }
+
+.container {
+    display: flex;
+    gap: 20px;
+}
