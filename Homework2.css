@@ -69,3 +69,8 @@ button {
 .item-name.completed {
     text-decoration: line-through;
 }
+
+.item-name.input {
+    flex: 2;
+}
+
