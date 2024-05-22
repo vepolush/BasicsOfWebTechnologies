@@ -74,3 +74,8 @@ button {
     flex: 2;
 }
 
+.quantity_control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
