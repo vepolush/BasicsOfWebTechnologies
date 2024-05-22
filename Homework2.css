@@ -74,8 +74,14 @@ button {
     flex: 2;
 }
 
-.quantity_control {
+.quantity-control {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+}
+
+.quantity-control button {
+    background: #da2828;
+    color: white;
+    padding: 5px 10px;
 }
