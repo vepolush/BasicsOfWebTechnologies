@@ -60,3 +60,8 @@ button {
     padding: 10px;
     border-radius: 5px;
 }
+
+.item-name {
+    flex: 2;
+    text-decoration: line-through;
+}
