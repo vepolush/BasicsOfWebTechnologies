@@ -40,3 +40,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+#add-button {
+    background: #2285cf;
+    color: white;
+}
