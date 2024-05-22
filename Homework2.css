@@ -137,3 +137,15 @@ button {
 .purchased-badge {
     text-decoration: line-through;
 }
+
+.badge-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #ab00d5;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 0;
+    font-size: 16px;
+    text-align: center;
+}
