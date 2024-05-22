@@ -26,3 +26,10 @@ body {
     flex-direction: column;
     gap: 20px;
 }
+
+input[id="item-name"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
