@@ -89,3 +89,10 @@ button {
 .quantity-control .increase {
     background: #22ba46;
 }
+
+.status-button {
+    background: #f3f3f3;
+    color: #646464;
+    padding: 5px 10px;
+}
+
