@@ -101,3 +101,27 @@ button {
     color: white;
     padding: 5px 10px;
 }
+
+.summary h3 {
+    margin: 0;
+}
+
+.remaining-item, .purchased-item {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.badge, .purchased-badge {
+    background: orange;
+    border-radius: 50%;
+    padding: 5px 10px;
+    color: white;
+}
+
+.purchased-badge {
+    text-decoration: line-through;
+}
