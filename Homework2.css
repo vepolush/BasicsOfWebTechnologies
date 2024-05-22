@@ -96,3 +96,8 @@ button {
     padding: 5px 10px;
 }
 
+.remove-button {
+    background: #da2828;
+    color: white;
+    padding: 5px 10px;
+}
