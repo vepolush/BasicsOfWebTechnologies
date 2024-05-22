@@ -16,3 +16,7 @@ body {
     border-radius: 10px;
 }
 
+.shopping-list {
+    flex: 2;
+}
+
