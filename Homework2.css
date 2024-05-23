@@ -12,10 +12,17 @@ body {
     padding: 2%;
 }
 
+@media (max-width: 500px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
 .shopping-list, .summary {
     background: white;
     padding: 20px;
     border-radius: 5px;
+    flex: 1;
 }
 
 .shopping-list {
@@ -144,8 +151,37 @@ button {
     left: 0;
     background-color: #ab00d5;
     color: white;
+    font-weight: bold;
     padding: 10px 20px;
     border-radius: 10px 10px 0 0;
     font-size: 16px;
-    text-align: center;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.badge-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.badge-container:hover {
+    height: 70px;
+    background-color: #4d01da;
+}
+
+.badge-container .sub-text {
+    display: none;
+}
+
+.badge-container:hover .sub-text {
+    display: block;
+    font-weight: normal;
+    padding-top: 5%;
+}
+
+.badge-container:hover .mini-sub-text {
+    font-size: 14px;
 }
