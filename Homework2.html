@@ -10,14 +10,14 @@
     <div class="container">
         <div class="shopping-list">
             <input type="text" placeholder="Назва товару" id="item-name">
-            <button id="add-button">Додати</button>
+            <button id="add-button" data-tooltip="Додати товар">Додати</button>
             <ul id="item-list">
                 <li>
                     <span class="item-name completed">Помідори</span>
                     <div class="quantity-control">
                         <span class="quantity">2</span>
                     </div>
-                    <button class="status-button completed">Не куплено</button>
+                    <button class="status-button completed" data-tooltip="Позначити як куплено">Не куплено</button>
                 </li>
                 <li>
                     <span class="item-name uncompleted">Печиво</span>
@@ -26,7 +26,7 @@
                         <span class="quantity">2</span>
                         <button class="increase">+</button>
                     </div>
-                    <button class="status-button uncompleted">Куплено</button>
+                    <button class="status-button uncompleted" data-tooltip="Позначити як не куплено">Куплено</button>
                     <button class="remove-button">x</button>
                 </li>
                 <li>
@@ -37,7 +37,7 @@
                         <button class="increase">+</button>
                     </div>
                     <button class="status-button uncompleted">Куплено</button>
-                    <button class="remove-button">x</button>
+                    <button class="remove-button" data-tooltip="Видалити товар">x</button>
                 </li>
             </ul>
         </div>
