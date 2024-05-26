@@ -36,11 +36,20 @@ body {
     gap: 20px;
 }
 
-input[id="item-name"] {
+#item-name {
     width: 70%;
-    padding: 10px;
+    padding: 11px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.product-input {
+    display: flex;
+    align-items: center;
+    width: 116%;
+    border: none;
+    border-radius: 0;
+    outline: none;
 }
 
 .item-name-input {
@@ -52,11 +61,14 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 #add-button {
     background: #2285cf;
     color: white;
+    border-radius: 0px 5px 5px 0px;
+    padding: 12px;
 }
 
 #item-list {
@@ -78,7 +90,6 @@ button {
 
 .item-name {
     flex: 2;
-    text-decoration: line-through;
 }
 
 .item-name.completed {
