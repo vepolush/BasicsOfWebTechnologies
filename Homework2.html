@@ -13,7 +13,7 @@
                 <input type="text" placeholder="Назва товару" id="item-name">
                 <button id="add-button" data-tooltip="Додати товар">Додати</button>
             </div>
-            
+
             <ul id="item-list">
                 <li>
                     <span class="item-name completed">Помідори</span>
@@ -47,12 +47,14 @@
         <div class="summary">
             <div class="remaining">
                 <h3>Залишилося</h3>
-                <div class="remaining-item">Печиво <span class="badge">2</span></div>
-                <div class="remaining-item">Сир <span class="badge">1</span></div>
+                <div class="remaining-items">
+                    <div class="remaining-item" id="remaining-item-cookies">Печиво <span class="badge">2</span></div>
+                <div class="remaining-item" id="remaining-item-cheese">Сир <span class="badge">1</span></div>
+                </div>
             </div>
             <div class="purchased">
                 <h3>Куплено</h3>
-                <div class="purchased-item">Помідори <span class="purchased-badge">2</span></div>
+                <div class="purchased-item" id="purchased-item-tomatoes">Помідори <span class="purchased-badge">2</span></div>
             </div>
         </div>
         <div class="badge-container">
