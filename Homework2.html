@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <div class="shopping-list">
+
             <div class="product-input">
                 <input type="text" placeholder="Назва товару" id="item-name">
                 <button id="add-button" data-tooltip="Додати товар">Додати</button>
@@ -16,7 +17,7 @@
 
             <ul id="item-list">
                 <li>
-                    <span class="item-name completed">Помідори</span>
+                    <span class="item-name completed">Помідори</span> <!-- групуємо елемент для подальшої роботи з css-->
                     <div class="quantity-control">
                         <span class="quantity">2</span>
                     </div>
@@ -26,7 +27,7 @@
                     <span class="item-name uncompleted">Печиво</span>
                     <div class="quantity-control">
                         <button class="decrease" data-tooltip="Зменшити кількість товару">-</button>
-                        <span class="quantity">2</span>
+                        <span class="quantity">2</span> 
                         <button class="increase" data-tooltip="Збільшити кількість товару">+</button>
                     </div>
                     <button class="status-button uncompleted" data-tooltip="Позначити як не куплено">Куплено</button>
@@ -61,8 +62,8 @@
             <div class="badge-content">
                 <div class="main-text">Buy List</div>
                 <div class="sub-text">
-                    <div class="mini-sub-text">Created by:</div>
-                    <div class="normal-sub-text">Vladyslav Shulepov</div>
+                    <div class="mini-sub-text" id="badge-created-by">Created by:</div>
+                    <div class="normal-sub-text" id="badge-name-surname">Vladyslav Shulepov</div>
                 </div>
             </div>
         </div>
