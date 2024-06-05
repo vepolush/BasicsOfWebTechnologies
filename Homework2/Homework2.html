@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список покупок</title>
+    <link rel="stylesheet" type="text/css" href="Homework2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="shopping-list">
+            <div class="input-section">
+                <input type="text" placeholder="Назва товару" id="item-name">
+                <button id="add-button" data-tooltip="Додати товар"><b>Додати</b></button>
+            </div>
+            <div class="item">
+                <div class="item-name"><s>Помідори</s></div>
+                <div class="quantity-controls">
+                    <button class="quantity-button decrement" style="display: none;" data-tooltip="Зменшити кількість">-</button>
+                    <span class="quantity"><b>2</b></span>
+                    <button class="quantity-button increment"style="display: none;" data-tooltip="Збільшити кількість">+</button>
+                    <button class="quantity-button3"></button>
+                </div>
+                <button class="delete-button2" data-tooltip="Видалити"><b>✖</b></button>
+                <button class="delete-button" style="display: none;" data-tooltip="Видалити"><b>✖</b></button>
+                <button class="bought-button" style="margin-right: 2%;" data-tooltip="Товар не куплено"><b>Не куплено</b></button>
+            </div>
+            <div class="item">
+                <div class="item-name">Печиво</div>
+                <div class="quantity-controls">
+                    <button class="quantity-button decrement" data-tooltip="Зменшити кількість">-</button>
+                    <span class="quantity"><b>2</b></span>
+                    <button class="quantity-button increment" data-tooltip="Збільшити кількість">+</button>
+                </div>
+                <button class="bought-button tooltip" data-tooltip="Товар куплено"><b>Куплено</b></button>
+                <button class="delete-button" style="margin-right: 2%;" data-tooltip="Видалити">✖</button>
+            </div>
+            <div class="item3">
+                <div class="item-name">
+                    <input type="text" value="Сир">
+                </div>
+                <div class="quantity-controls">
+                    <button class="quantity-button decrement" style="background-color: #f99090;" data-tooltip="Неможливо зменшити кількість">-</button>
+                    <span class="quantity"><b>1</b></span>
+                    <button class="quantity-button increment" data-tooltip="Збільшити кількість">+</button>
+                </div>
+                <button class="bought-button tooltip" data-tooltip="Товар куплено"><b>Куплено</b></button>
+                <button class="delete-button" data-tooltip="Видалити">✖</button>
+            </div>
+        </div>
+        <div class="summary">
+            <div class="remaining-list">
+                <h2>Залишилося:</h2>
+                <div class="summary-item">
+                    <span class="summary-name"><b>Печиво</b></span>
+                    <span class="badge">2</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-name"><b>Сир</b></span>
+                    <span class="badge">1</span>
+                </div>
+            </div>
+            <h2></h2>
+            <div class="bought-list">
+                <h2>Куплено:</h2>
+                <div class="summary-item">
+                    <span class="summary-name"><s><b>Помідори</b></s></span>
+                    <span class="badge"><s>2</s></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="badge2">
+        <div class="badge-content">
+            <span><b>Buy List</b></span>
+            <span class="created-by">Created by: Vladyslav Shulepov</span>
+        </div>
+    </div>
+    <script src="Homework2.js"></script>
+</body>
+</html>
+
