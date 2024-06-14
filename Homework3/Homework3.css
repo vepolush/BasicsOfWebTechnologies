@@ -1,0 +1,696 @@
+body {
+    background-color: #fffff6;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, serif;
+    flex-wrap: wrap; /* елементи у контейнері flex будуть переноситися на нові рядки, якщо не поміщаються в одному рядку */
+    box-sizing: border-box; /* загальні розміри елемента залишаються фіксованими, незалежно від 'padding' та 'border' */
+    margin: 0;
+}
+
+.header {
+    min-width: 300px;
+    position: fixed; /* header залищаєтья на одному місці, навіть при прокрутці сторінки*/
+    top: 0px;
+    left: 0;
+    display: flex;
+    box-sizing: border-box;
+    height: 100px;
+    width: calc(100% - 350px);
+    background-color: black;
+    opacity: 85%;
+    z-index: 3; /* елемент буде накоадатися поверх інших елементів*/
+}
+
+.delivery-info {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    width: 88%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.delivery-info .sign-in {
+    display: flex;
+    float: right;
+}
+
+.info-details {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    height: 100%;
+    color: grey;
+}
+
+.phone {
+    font-size: 20px;
+}
+
+.working-hours {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.delivery-name {
+    min-width: 100px;
+    width: 100px;
+    height: 100%;
+    background-color: #f2711d;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.delivery-name span {
+    justify-content: center;
+    display: flex;
+    color: white;
+    font-size: 24px;
+    padding: 2px;
+}
+
+.pizza-hat {
+    margin: 0;
+    width: 100%;
+    min-width: 100px;
+    position: relative;
+    bottom: -23px;
+    transform: rotate(180deg);
+}
+
+.main-info {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    height: 50%;
+    border-bottom: 1.5px solid grey;
+}
+
+.sign-in {
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: #e47d16;
+    border: 2px solid #f2711d;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pizza {
+    height: 50%;
+    align-items: center;
+    display: flex;
+    color: lightgrey;
+}
+
+.cart {
+    display: block;
+    box-sizing: border-box;
+    height: 100%;
+    width: 350px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #f5f5f5;
+    z-index: 3;
+}
+
+.list {
+    min-width: 350px;
+    position: absolute;
+    top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    width: calc(100% - 350px);
+    height: fit-content; /* висота елемента 'list' автоматично підлаштовується під висоту його змісту*/
+    background-color: #fffff6;
+    overflow: visible;
+}
+
+.pizza-filters {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: fit-content;
+    width: 100%;
+    opacity: 85%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: -30px;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.pizza-filters span {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.pizza-filters .pizzas-amount {
+    margin-left: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #f2711d;
+    border-radius: 50%;
+    display: inline-block; 
+    text-align: center;
+    width: 30%;
+    height: 30px;
+    align-items: center;
+    align-content: center;
+}
+
+.filters {
+    color: #f2711d;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    height: 40px;
+    font-size: 20px;
+    justify-content: space-around; 
+    background-color: #fff; 
+}
+
+.filters button {
+    background-color: #fffff6; 
+    color: #f2711d; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    font-size: 18px; 
+    margin-top: 10px;
+}
+
+.filters button.active {
+    background-color: #f2711d; 
+    color: white;
+}
+
+
+.pizza-item {
+    margin: 15px;
+    border-radius: 5px;
+    border: 0.5px solid lightgrey;
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 330px;
+    width: 330px;
+    height: 640px;
+    background-color: #ffffff;
+    z-index: 1;
+    overflow: visible;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.pizza-item img {
+    width: 95%;
+    margin: 2.5%;
+}
+
+.name, .pizza-type, .ingredients {
+    margin-left: 10px;
+}
+
+.name {
+    font-weight: bold;
+    display: block;
+    color: #f2711d;
+    font-size: 34px;
+}
+
+.pizza-type {
+    color: #b1afaf;
+    font-size: 10px;
+}
+
+.ingredients {
+    height: 52px;
+    display: block;
+    margin-top: 0;
+    font-size: 14px;
+    width: 80%;
+}
+
+.size-info {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.single {
+    justify-content: center;
+}
+
+.size-l, .size-s {
+    width: 40%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.size-s img, .size-l img {
+    width: fit-content;
+    display: inline;
+}
+
+.size, .weight {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.price b {
+    margin-top: 15px;
+    font-size: 34px;
+    display: block;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+}
+
+.size-s span, .size-l span {
+    display: flex;
+    justify-content: center;
+}
+
+.size-l button, .size-s button {
+    margin-left: 7%;
+    width: 85%;
+    background-color: #ffa500;
+    border: 2px solid #ff8c00;
+    box-shadow: inset 0px -2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    height: 35px;
+    color: white;
+    font-size: 16px;
+    margin-top: 20%;
+}
+
+.discount {
+    position: fixed;
+    width: 90px;
+    height: 110px;
+    background-color: #de8b3a;
+    left: 10px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding-left: 4px;
+    padding-right: 4px;
+    box-sizing: border-box;
+    border-right: 1px solid #ce7524;
+    border-left: 1px solid #ce7524;
+    transition: all 1s ease;
+    z-index: 2;
+}
+
+.discount-hat {
+    width: 90px;
+    position: relative;
+    bottom: 10px;
+    left: -5px;
+}
+
+.discount span {
+    border-bottom: 2px dotted #d17a28;
+}
+
+.discount .advert {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.discount label {
+    margin-top: 10px;
+}
+
+.cart {
+    display: block; /* блоковий елемет */
+    box-sizing: border-box;
+    height: 100%;
+    width: 350px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #f5f5f5;
+    z-index: 3;
+}
+
+.cart {
+    box-sizing: border-box;
+    box-shadow: 7px 0 20px black;
+}
+
+.cart-title {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    font-size: 12px;
+}
+
+.cart .cart-title span {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.cart .cart-title span span {
+    margin-left: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #f2711d;
+    border-radius: 45%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+}
+
+.cart .cart-title .clear-order {
+    padding-top: 5px;
+    padding-right: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.clear-order {
+    color: rgb(191, 187, 187);
+    font-size: 10px;
+}
+
+.clear-order:hover {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+.size-s button:hover, .size-l button:hover {
+    background-color: #a67932;
+    border: 1px solid #a67932;
+    cursor: pointer;
+}
+
+.ordering:hover {
+    background-color: #a67932;
+    border: 1px solid #a67932;
+    cursor: pointer;
+}
+
+.ordered-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    height: 120px;
+    box-sizing: border-box;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.pizza-name {
+    font-size: 18px;
+    color: #f2711d;
+    margin-bottom: 5px;
+}
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.size, .weight {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.size img, .weight img {
+    margin-right: 4px;
+}
+
+.size span, .weight span {
+    margin-left: 3px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.control-panel {
+    display: flex;
+    align-items: center;
+}
+
+.amount-control {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.amount-control button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.amount-control .plus {
+    background-color: #22ba46;
+    margin-left: 5px;
+}
+
+.amount-control .plus:hover {
+    background-color: #21a340;
+    cursor: pointer;
+}
+
+.amount-control .minus {
+    background-color: #db2828;
+}
+
+.amount-control .minus:hover {
+    background-color: #bf2728;
+    cursor: pointer;
+}
+
+.amount-control span {
+    margin: 0 5px;
+    font-size: 18px;
+}
+
+.delete {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f8f6f6;
+    color: #f2711d;
+    border: 1.5px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete:hover {
+    background-color: #cfcfd0;
+    cursor: pointer;
+}
+
+.order-picture {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+
+.order-picture img {
+    width: 100%;
+    border-radius: 50%;
+    position: relative;
+    right: -60%;
+    width: 100px;
+}
+
+.buy-section {
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart .order-sum span {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.cart .buy-section .sum {
+    padding-top: 5px;
+    position: absolute;
+    right: 0;
+    padding-right: 4px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.order-sum {
+    height: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.cart .buy-section .order-section {
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ordering {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%;
+    height: 50%;
+    border-radius: 5px;
+    background-color: #ffa500;
+    border: 2px solid #ff8c00;
+    box-shadow: inset 0px -2px 4px rgba(0, 0, 0, 0.17);
+    align-items: center;
+}
+
+@media(max-width: 800px) {
+    .delivery-info .main-info .info-detalis .working-hours {
+        display: none;
+    }
+    .sign-in {
+        float: left;
+    }
+}
+
+@media(max-width: 1000px) {
+    .delivery-info .main-info .info-detalis .delivery-status {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .delivery-info {
+        width: 0%;
+    }
+
+    .pizza-filters, .pizza-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .pizza-item {
+        width: 100%;
+    }
+
+    .order-summary {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+
+}
+
+.new {
+    height: 30px;
+    width: 60px;
+    position: relative;
+    left: 90%;
+    bottom: 98.5%;
+    background-color: #cb5b51;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.popular {
+    height: 30px;
+    width: 100px;
+    position: relative;
+    right: -75%;
+    top: -98.5%;
+    background-color: #72b763;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.pizza-list {
+    padding-top: 265px;
+    width: 90%;
+}
+
+
+
+
+
+
+
+
+
+
