@@ -605,7 +605,7 @@ body {
 }
 
 @media(max-width: 800px) {
-    .delivery-info .main-info .info-detalis .working-hours {
+    .working-hours {
         display: none;
     }
     .sign-in {
@@ -644,40 +644,6 @@ body {
         bottom: 0;
     }
 
-}
-
-.new {
-    height: 30px;
-    width: 60px;
-    position: relative;
-    left: 90%;
-    bottom: 98.5%;
-    background-color: #cb5b51;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-}
-
-.popular {
-    height: 30px;
-    width: 100px;
-    position: relative;
-    right: -75%;
-    top: -98.5%;
-    background-color: #72b763;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
 }
 
 .pizza-list {

@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const itemName = itemNameInput.value.trim();
         if (itemName === '') return;
 
-        // Створення нового елементу товару
         const newItem = document.createElement('div');
         newItem.className = 'item';
         newItem.innerHTML = `
@@ -22,20 +21,19 @@ document.addEventListener('DOMContentLoaded', function () {
             <button class="delete-button" style="margin-right: 2%;" data-tooltip="Видалити">✖</button>
         `;
 
-        // Додаємо обробники подій для кнопок
         newItem.querySelector('.decrement').addEventListener('click', decrementQuantity);
         newItem.querySelector('.increment').addEventListener('click', incrementQuantity);
         newItem.querySelector('.bought-button').addEventListener('click', markAsBought);
         newItem.querySelector('.delete-button').addEventListener('click', deleteItem);
         newItem.querySelector('.item-name').addEventListener('click', editItemName);
 
-        shoppingList.appendChild(newItem); // Додаємо новий товар до списку
+        shoppingList.appendChild(newItem); 
 
-        itemNameInput.value = '';  // Очищаємо поле вводу
-        itemNameInput.focus(); // Встановлюємо фокус на поле вводу
+        itemNameInput.value = '';  
+        itemNameInput.focus(); 
 
         
-        updateSummary(); // Оновлюємо статистику
+        updateSummary(); 
     }
 
     // Функція для зменшення кількості товару
@@ -48,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 event.target.style.backgroundColor = '#f99090'; 
                 event.target.setAttribute('data-tooltip', 'Неможливо зменшити кількість');
             }
-            updateSummary(); // Оновлюємо статистику
+            updateSummary(); 
         }
     }
 
@@ -63,10 +61,9 @@ document.addEventListener('DOMContentLoaded', function () {
             decrementButton.style.backgroundColor = '#dc3545'; 
             decrementButton.setAttribute('data-tooltip', 'Зменшити кількість');
         }
-        updateSummary(); // Оновлюємо статистику
+        updateSummary(); 
     }
 
-    // Функція для позначення товару як купленого/некупленого
     function markAsBought(event) {
         const itemDiv = event.target.closest('.item, .item3');
         const itemNameDiv = itemDiv.querySelector('.item-name');
@@ -93,14 +90,14 @@ document.addEventListener('DOMContentLoaded', function () {
             incrementButton.style.display = 'inline';
     
         }
-        updateSummary(); // Оновлюємо статистику
+        updateSummary(); 
     }
 
     // Функція для видалення товару зі списку
     function deleteItem(event) {
         const itemDiv = event.target.closest('.item, .item3');
         itemDiv.remove();
-        updateSummary(); // Оновлюємо статистику
+        updateSummary(); 
     }
 
     // Функція для редагування назви товару
@@ -112,23 +109,22 @@ document.addEventListener('DOMContentLoaded', function () {
         inputField.value = itemName;
         inputField.classList.add('item-input');
 
-        itemNameDiv.replaceWith(inputField); // Замінюємо назву на поле вводу
+        itemNameDiv.replaceWith(inputField); 
 
-        inputField.focus(); // Встановлюємо фокус на поле вводу
+        inputField.focus(); 
 
-        // Додаємо обробник подій для завершення редагування
+        
         inputField.addEventListener('blur', () => {
             const newItemName = inputField.value.trim();
             const newSpan = document.createElement('div');
             newSpan.className = 'item-name';
             newSpan.textContent = newItemName;
             newSpan.addEventListener('click', editItemName); 
-            inputField.replaceWith(newSpan); // Замінюємо поле вводу на нову назву
-            updateSummary(); // Оновлюємо статистику
+            inputField.replaceWith(newSpan); 
+            updateSummary(); 
         });
     }
-
-// Функція для оновлення статистики   
+ 
 function updateSummary() {
     const remainingList = document.querySelector('.remaining-list');
     const boughtList = document.querySelector('.bought-list');
@@ -164,16 +160,14 @@ function updateSummary() {
     });
 }
  
-    addButton.addEventListener('click', addItem); // Додаємо обробник подій для кнопки додавання товару
+    addButton.addEventListener('click', addItem); 
 
-    // Додаємо обробник подій для вводу товару при натисканні клавіші Enter
     itemNameInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             addItem();
         }
     });
 
-    // Додаємо обробники подій для існуючих елементів
     document.querySelectorAll('.decrement').forEach(button => button.addEventListener('click', decrementQuantity));
     document.querySelectorAll('.increment').forEach(button => button.addEventListener('click', incrementQuantity));
     document.querySelectorAll('.bought-button').forEach(button => button.addEventListener('click', markAsBought));
@@ -181,5 +175,5 @@ function updateSummary() {
     document.querySelectorAll('.item-name').forEach(item => item.addEventListener('click', editItemName));
 
    
-    updateSummary(); // Оновлюємо статистику після завантаження сторінки
+    updateSummary(); 
 });
